@@ -1,0 +1,89 @@
+@import "compass/reset";
+@import "compass/css3";
+@import "blueprint/grid";
+
+html {
+  @include background-image(linear-gradient(top, #0683C3, #30499C));
+  height: 100%;
+}
+body {                                                         
+  background: none;
+  @include container;
+  margin-top: 100px;                                           
+  font: 16px/1.5 "Helvetica Neue",Arial,Helvetica,sans-serif;
+  @include text-shadow(black,1px,1px,0);
+  color: #eee;
+  color: transparentize(white,0.15);
+} 
+a {
+  font-weight: bold;
+  text-decoration: none;       
+  color: white;
+  @include transition((color,background),0.25s,linear);                              
+  &:hover {                    
+    color: #ffc;
+  }
+}
+h1,h2 {     
+  color: transparentize(white,0.03);
+  font-size: 36px;
+  line-height: 1.25;
+}
+h1 {
+  @include column(16,last);
+  @include append(8);    
+  font-weight: bold;
+  font-size: 48px;
+  text-shadow: 0 1px 0 #ccc, 
+                 0 1px 0 #c9c9c9,
+                 0 1px 0 #bbb,
+                 0 2px 0 #b9b9b9,
+                 0 3px 0 #aaa,
+                 0 4px 1px rgba(0,0,0,.1),
+                 0 0 5px rgba(0,0,0,.1),
+                 0 1px 3px rgba(0,0,0,.3),
+                 0 3px 5px rgba(0,0,0,.2),
+                 0 5px 10px rgba(0,0,0,.25),
+                 0 10px 10px rgba(0,0,0,.2),
+                 0 20px 20px rgba(0,0,0,.15)
+}                    
+h2 {
+  font-weight: normal;
+  @include column(20,last);
+  @include append(4);
+}
+section {
+  & > p {
+    font-size: 24px;    
+    @include column(22,last);
+    @include append(4);
+  }
+  @include column(24,last);
+  margin: 2em 0;  
+}                 
+article {
+  @include column(24,last);
+  margin: 2em 0;  
+  a {
+    font-weight: normal;
+    background: #dfdfdf;
+    color: #444;
+    padding: 0.25em 1em;
+    border: 2px solid #494949;      
+    font-size: 2em;
+    @include border-radius(0.85em);
+    @include box-shadow(rgba(0,0,0,0.25),0,0,8px);
+    -webkit-box-shadow: 
+      rgba(0,0,0,0.25) 0 0 8px 0,
+      white 0 0 8px 4px inset;
+    @include text-shadow(white,0,2px,0);   
+    -webkit-background-clip: padding-box;
+    &:hover {    
+      color: #2a2a2a;
+      background: #fafafa;
+    }
+  }
+}
+footer {
+  @include column(24,last);
+}
